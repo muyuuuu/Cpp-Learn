@@ -224,3 +224,11 @@ int func(int a, int b = 1)
 - `std::vector<std::string> s{"hello", " world", "."}`
 
 只支持 `for`，不支持 `while` 和 `do while`。
+
+# 带有初始化器的 `if` 和 `switch`
+
+使用原因：
+
+- 本应在 `if` 作用域内的变量，侵入了周边的作用域，作用范围没有必要的扩大。
+- 编译器知道变量作用在 `if` 块，可以更好的优化代码。
+
