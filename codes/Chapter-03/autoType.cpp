@@ -39,14 +39,22 @@ int main(){
 
     int arr[4]{1, 2, 3, 4};
     auto arr1{ arr };
-    // 类型为指针
+    // 类型为指针 数组的名字是指针
     cout << typeid(arr1).name() << endl;
+    for (int i = 0; i < 4; i++){
+        cout << arr1[i] << " "; 
+    }
+    cout << endl;
 
     int arr2[]{1, 2, 3, 4};
+    // 数组的引用
     auto& arr3{arr2};
     // 类型为数组
     cout << typeid(arr3).name() << endl;
-
+    for (int i = 0; i < 4; i++){
+        cout << *(arr3 + i) << " "; 
+    }
+    cout << endl;
     // 函数
     cout << max(c1, c) << endl;
 
