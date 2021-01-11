@@ -36,7 +36,7 @@ int main(){
 
     int x4{-1};
     int const* p4 = &x4;
-    *p4 = 16;
+    // *p4 = 16;
     x4 = -2;
     p4 = &x1;
     cout << *p4 << endl;
