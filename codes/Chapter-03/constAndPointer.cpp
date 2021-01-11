@@ -34,6 +34,13 @@ int main(){
     const int* const p3 = &x3;
     cout << *p3 << endl;
 
+    int x4{-1};
+    int const* p4 = &x4;
+    *p4 = 16;
+    x4 = -2;
+    p4 = &x1;
+    cout << *p4 << endl;
+
     // char* s = "Hello"; // 错误
     // “Hello” 是常量
     const char* s = "Hello";

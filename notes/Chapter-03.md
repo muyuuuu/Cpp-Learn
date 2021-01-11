@@ -125,3 +125,22 @@ char s[] = "hello";
 常量指针：指向常量值的指针变量，指针指向的内容不能通过指针 `*p` 来修改。
 
 指针常量：一个常量，指向变量值的不可变指针，如数组名。
+
+# 宏
+
+`#define` 是一个预处理指示符。如 `#define TRUE 1`，将`TRUE` 替换为 1。
+
+# typedef
+
+`typedef int A`
+
+`using` 代替 `typedef`，`using uint = usigned int;`，`using funcType = void(*) (int, int);`，函数指针类型。然后
+
+```C
+void example(int, int){
+
+}
+funcType f = example;
+```
+
+`using std::cin` 是对象，不是类型。定义模板的别名，只能使用`using`。代表类型的名字必须首字母大写，其他字母大小写混合。

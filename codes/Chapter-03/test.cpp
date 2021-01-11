@@ -12,6 +12,9 @@ int main(){
     int a{1}, b{2};
     const int* c = &a;
     c = &b;
-    std::cout << *c;
+    std::cout << *c << std::endl;
+
+    const int x{12};
+    std::cout << sizeof(x) << std::endl;
     return 0;
 }
