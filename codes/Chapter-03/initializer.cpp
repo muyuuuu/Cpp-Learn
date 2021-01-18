@@ -22,7 +22,7 @@ int main(){
     // 含有初始化器
     // 在 if 内，作用域为 if 块内部
     // C++17
-    if (auto y = foo(90); y > 40){
+    if (auto y{90}; y > 40){
         cout << "yes" << endl;
     } else {
         cout << "no" << endl;
@@ -30,7 +30,7 @@ int main(){
     auto y{12};
 
     switch (int i = rand() % 100; i){
-    case 1: cout << "1" << endl; break;
-    default: cout << "2" << endl; break;
+        case 1: cout << "1" << endl; break;
+        default: cout << "2" << endl; break;
     }
 }
