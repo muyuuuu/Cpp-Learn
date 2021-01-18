@@ -97,14 +97,105 @@ _Pragma("once")
 ## 参数传递
 
 1. 值传递
+```C++
+// Pass by value
+void print( Circle c ) {
+  /* … */
+}
+int main() {
+  Circle myCircle(5.0);
+  print( myCircle );
+}
+```
 2. 引用传递
+```C++
+void print( Circle& c ) {
+  /* … */
+}
+int main() {
+  Circle myCircle(5.0);
+  print( myCircle );
+}
+```
 3. 指针传递
+```C++
+void print( Circle* c ) {
+  /* … */
+}
+int main() {
+  Circle myCircle(5.0);
+  print( &myCircle );
+}
+```
 
 ## 对象作为参数返回
 
 1. 返回对象
+```C++
+// class Object { ... };
+Object f ( /*函数形参*/ ){
+  // Do something
+  return Object(args);
+}
+// main() {
+Object o = f ( /*实参*/ );
+f( /*实参*/ ).memberFunction();
+```
 2. 返回对象指针（不要在函数外部删除函数内部创建的指针，应该由函数外创建，函数内修改，函数外删除）
-3. 返回对象引用（考虑对象的生存周期）
+```C++
+// class Object { ... };
+Object* f ( /*函数形参*/ ){
+  Object* o = new Object(args) // 这是“邪恶”的用法，不要这样做
+  // Do something
+  return o;
+}
+// main() {
+Object* o = f ( /*实参*/ );
+f( /*实参*/ )->memberFunction();
+// 记得要delete o
+```
+允许的用法
+```C++
+// class Object { ... };
+Object* f ( Object* p, /*其它形参*/ ){
+  // Do something
+  return p;
+}
+// main() {
+Object* o = f ( /*实参*/ );
+// 不应该delete o
+```
+3. 返回对象引用（考虑对象的生存周期
+```C++
+// class Object { ... };
+Object& f ( /*函数形参*/ ){
+  Object o {args};
+  // Do something
+  return o;  //这是邪恶的用法
+}
+```
+可行的用法1
+```C++
+// class Object { ... };
+class X {
+  Object o;
+  Object f( /*实参*/ ){
+    // Do something
+    return o;
+  }
+}
+```
+可行的用法2
+```C++
+// class Object { ... };
+Object& f ( Object& p, /*其它形参*/ ){
+  // Do something
+  return p;
+}
+// main() {
+auto& o = f ( /*实参*/ );
+f( /*实参*/ ).memberFunction();
+```
 4. 尽可能使用 const 修饰函数返回值类型和参数
 
 C++中有意义的是：传值和传引用。
