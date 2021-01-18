@@ -8,6 +8,8 @@ class Account
 public:
     // 不能使用 auto 
     double balance{0.0};
+    // 函数体为空
+    // 将编译器的事放到明面
     Account() = default;
     Account(double now){
         balance = now;

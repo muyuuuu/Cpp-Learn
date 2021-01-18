@@ -14,6 +14,7 @@ class Circle {
     Circle(double r){
         radius = r;
     }
+    // inline 形式
     double getArea(){
         return (3.14 * radius * radius);
     }
