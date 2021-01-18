@@ -55,3 +55,29 @@
 - 类中定义内联函数，无需写`inline`关键字
 
 编译方式：`g++ main.cpp class.cpp -o main.exe`
+
+# 避免头文件被多次包含
+
+`C++` 预处理指令，保证头文件只被包含/编译一次。
+
+```C++
+// 刚开始宏没定义
+// 下次再包含，宏已经定义，跳过
+#ifndef NY_HEADER_FILE_H
+// 定义宏和内容
+#define MY_HEADER_FILE_H
+// 内容
+#endif 
+```
+
+编译指令，只编译一次
+```C++
+#pragma once
+```
+
+`C++11`中运算符：
+```C++
+// 建议不加分号
+_Pragma("once")
+```
+放在宏中使用。
