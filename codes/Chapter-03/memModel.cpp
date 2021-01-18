@@ -8,6 +8,8 @@ int main(){
     // 数组
     q = new int[4];
 
+    std::cout << sizeof(p) << " " << sizeof(q) << std::endl;
+
     std::cout << *p << std::endl;
     *p = 15;
     std::cout << *p << std::endl;
