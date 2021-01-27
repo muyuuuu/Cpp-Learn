@@ -24,6 +24,5 @@ int main(){
     array<char, 3> arr1 {'a', 'b', 'c'};
     auto [d1, d2, d3] {arr1};
     
-
     return 0;
 }
