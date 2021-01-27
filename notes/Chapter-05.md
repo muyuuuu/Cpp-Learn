@@ -142,3 +142,9 @@ Circle c2{c1};
 深拷贝：
 1. 重载默认赋值函数
 2. 自己编写拷贝构造函数，拷贝指针所指的内容
+
+# 字符串字面量
+
+`C++11`中语法：`R"delimiter(raw_characters)delimiter"`。
+
+`C++14`：
