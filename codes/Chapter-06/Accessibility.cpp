@@ -50,6 +50,7 @@ int main(){
     pro b;
     pri c;
 
+    // 函数是 public 的，变量不是，所以不能访问
     a.foo();
     b.foo();
     c.foo();
