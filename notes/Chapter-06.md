@@ -103,3 +103,12 @@ Circle(double r): Shape{} {radius = r;}
 
 # 动态类型转换
 
+在之前的 `print` 函数中，想打印额外的信息。比如，如果是圆的话，打印半径：
+
+```C++
+void print(Shape& p){
+    p.show();
+}
+```
+
+`dynamic_cast`运算符，沿着类的继承层次，向上、向下、侧向转换类的指针和引用。转换成功，返回；失败，指针返回`nullptr`，引用抛异常。
