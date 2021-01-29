@@ -78,3 +78,15 @@ Circle(double r): Shape{} {radius = r;}
 
 - `void foo() final // 被覆写，且是最终覆写`
 - `class B final : A // B 不能被继承，且 B 不能覆写 foo() 函数`
+
+# 访问控制
+
+`protected` 保护属性的数据或函数，可以被类的派生类访问，但不能在类的外面访问，派生类中不能访问基类`private`保护的数据。
+
+`class B : public A`中的`public`表示派生方式为公有继承。所有的基类成员的访问属性在派生类中不会改变，派生类只能访问基类的 `public` 和 `protected` 成员，不能访问 `private` 成员。类外面派生类对象只能访问 `public` 的成员。
+
+`class B : private A`私有继承，基类所有成员到派生类中都会变成私有的。派生类只能访问基类的 `public` 和 `protected` 成员，类外面，派生类的对象不能访问任何基类的私有数据。
+子类私有继承，孙类继承子类，无法访问子类的任何成员。
+
+`class B : protected A`保护继承，基类的`public`成员到派生类中变成`protected`，其余成员的属性不变。派生类只能访问基类的 `public` 和 `protected` 成员。类外面，派生类无法访问基类的任何成员。
+子类保护继承父类，孙类保护继承和共有继承，能访问父类的 `protected` 保护成员。
