@@ -71,3 +71,15 @@
 - `get()`读单个字符，`in.get()`返回`int`类型，`in.get(c)`返回`char`类型
 - `put()`输出单个字符，`put(char c)`
 - `flush`，强制将缓冲区数据写入流，`cout.flush()`，`cout << "hello" << std::flush`
+
+# 文件打开模式
+
+编译器不同取值可能不同：
+- `in`打开文件读数据
+- `out`打开文件写数据
+- `app`追加到文件末尾
+- `ate`文件光标移动到末尾
+- `trunc`文件存在，则舍弃其中的内容
+- `binary`二进制读写
+
+位或组合在一起：`out|app`，追加写。
