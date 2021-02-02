@@ -12,10 +12,13 @@ private:
     double x{0}, y{0};
 public:
     Vec2D()=default;
-    Vec2D(double x, double y){
-        this->x = x;
-        this->y = y;
-    }
+    // 直接初始化
+    Vec2D(double xx, double yy) : x{xx}, y{yy} {}
+    // 默认初始化以后赋值
+    // Vec2D(double x, double y){
+    //     this->x = x;
+    //     this->y = y;
+    // }
     string toString(){
         string s{""};
         s += "x = ";
