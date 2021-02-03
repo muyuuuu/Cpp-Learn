@@ -13,6 +13,9 @@ private:
 public:
     Vec2D()=default;
     // 直接初始化
+    // 如果类成员是 const T 类型，就只能：要么在声明时给初始值；
+    // 要么在构造函数初始化列表中给初始值。
+    // 构造函数体里不能修改 const T 类型的成员。
     Vec2D(double xx, double yy) : x{xx}, y{yy} {}
     // 默认初始化以后赋值
     // Vec2D(double x, double y){

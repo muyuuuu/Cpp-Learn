@@ -1,6 +1,7 @@
 #include <iostream>
 
-int add(int& tmp1, int tmp2){
+// 常量左值引用，可以绑定在右值上。
+int add(int& tmp1, const int& tmp2){
     return tmp1 + tmp2;
 }
 
