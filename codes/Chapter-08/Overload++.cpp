@@ -38,8 +38,8 @@ int main(){
     v.toString();
 
     // 返回一个临时对象
-    Vec a = v++;
-    a.toString();
+    // 所以不是左值，取不到地址
+    (v++).toString();
     v.toString();
 
     return 0;
