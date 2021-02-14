@@ -24,6 +24,17 @@ int main(){
     cout << s3 << endl;
     cout << s4 << endl;
 
+    // 不会中断 原封不动输出
+    const char* s5 = R"(hello\0 world)";
+    cout << s5 << endl;
+
+    // 会中断
+    std::string s6 = "asd\0asd";
+    cout << s6 << endl;
+
+    // 不会中断 但被转义 R 保证不被转义
+    std::string s7 = "asd\0asd"s;
+    cout << s7 << endl;
 
     return 0;
 }
