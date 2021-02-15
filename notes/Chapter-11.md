@@ -81,3 +81,12 @@ Standard template library，C++标准库这噢乖要组成部分，94年进入�
 - `back`返回尾部
 - `insert(pos, elem)`元素插入到指定位置
 
+# 关联容器
+
+使用`key`快速存取元素，元素按默认规则进行排序。共同函数：
+
+- `find(key)`搜索容器中具有`key`的元素，返回指向的迭代器，没找到返回指向容器最后一个元素后面的迭代器
+- `lower_bound(key)`搜索具有`key`的第一个元素，返回指向元素的迭代器
+- `upper_bound(key)`搜索具有`key`的最后一个元素，返回指向元素之后位置的迭代器
+- `count(key)`具有`key`元素的数量
+
